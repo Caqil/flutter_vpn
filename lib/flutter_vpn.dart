@@ -96,16 +96,16 @@ class FlutterVpn {
   /// Use given credentials to connect VPN (ikev2-eap).
   /// This will create a background VPN service.
   /// MTU is only available on android.
-  static Future<void> simpleConnect(
+  static Future<void> startVpn(
     VpnConfig vpnConfig, {
     int? port,
     int? mtu,
   }) async {
     await _channel.invokeMethod('connect', {
-      'name': name,
-      'server': server,
-      'username': username,
-      'password': password,
+      'name': vpnConfig.flag,
+      'server': vpnConfig.address,
+      'username': vpnConfig.username,
+      'password': vpnConfig.password,
       if (port != null) 'port': port,
       if (mtu != null) 'mtu': mtu,
     });
