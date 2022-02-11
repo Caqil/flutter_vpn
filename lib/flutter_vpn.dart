@@ -98,18 +98,19 @@ class FlutterVpn {
   /// MTU is only available on android.
   static Future<void> startVpn(
     int status,
-    String name,
-    String server,
+    String flag,
+    String address,
     String username,
     String password, {
     int? port,
     int? mtu,
   }) async {
-    await _channel.invokeMethod('connect', {
-      'name': vpnConfig.flag,
-      'server': vpnConfig.address,
-      'username': vpnConfig.username,
-      'password': vpnConfig.password,
+   await _channel.invokeMethod('connect', {
+      'name': flag,
+      'server': address,
+      'username': username,
+      'password': password,
+      'status':status,
       if (port != null) 'port': port,
       if (mtu != null) 'mtu': mtu,
     });
