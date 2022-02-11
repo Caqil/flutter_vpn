@@ -97,10 +97,7 @@ class FlutterVpn {
   /// This will create a background VPN service.
   /// MTU is only available on android.
   static Future<void> simpleConnect(
-    String name,
-    String server,
-    String username,
-    String password, {
+    VpnConfig vpnConfig, {
     int? port,
     int? mtu,
   }) async {
