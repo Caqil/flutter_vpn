@@ -39,7 +39,6 @@ import android.security.KeyChainException;
 import android.system.OsConstants;
 import android.util.Log;
 
-import org.strongswan.android.R;
 import org.strongswan.android.data.VpnProfile;
 import org.strongswan.android.data.VpnProfile.SelectedAppsHandling;
 import org.strongswan.android.data.VpnType;
@@ -376,8 +375,8 @@ public class CharonVpnService extends VpnService implements Runnable, VpnStateSe
             name = profile.getName();
         }
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
-                .setSmallIcon(R.drawable.ic_notification)
-//                .setSmallIcon(androidx.appcompat.R.drawable.abc_ic_star_black_48dp)
+//                .setSmallIcon(R.drawable.ic_notification)
+                .setSmallIcon(androidx.appcompat.R.drawable.abc_ic_star_black_48dp)
                 .setCategory(NotificationCompat.CATEGORY_SERVICE)
                 .setVisibility(publicVersion ? NotificationCompat.VISIBILITY_PUBLIC
                         : NotificationCompat.VISIBILITY_PRIVATE);
