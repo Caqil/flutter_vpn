@@ -39,6 +39,7 @@ import android.security.KeyChainException;
 import android.system.OsConstants;
 import android.util.Log;
 
+import org.strongswan.android.R;
 import org.strongswan.android.data.VpnProfile;
 import org.strongswan.android.data.VpnProfile.SelectedAppsHandling;
 import org.strongswan.android.data.VpnType;
